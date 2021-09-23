@@ -31,8 +31,5 @@ Refer to `train.py`.
 ## Testing
 Refer to `test.py`.
 
-## TODOs 
-- Improve the documentation. 
-
-## Thanks
+## Acknowledgements
 Thanks @tarashakhurana for help with README.
