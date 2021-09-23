@@ -15,17 +15,24 @@ You can find our paper on [CVF Open Access](https://openaccess.thecvf.com/conten
 }
 ```
 
+## Setup
+- Download nuScenes dataset, including the CANBus extension, as we will use the recorded vehicle state data for trajectory sampling. (Tip: the code assumes they are stored under `/data/nuscenes`.)
+- Install packages and libraries (via `conda` if possible), including `torch`, `torchvision`, `tensorboard`, `cudatoolkit-11.1`, `pcl>=1.9`, `pybind11`, `eigen3`, `cmake>=3.10`, `scikit-image`, `nuscenes-devkit`. (Tip: verify location of python binary with which python.)
+- Compile code for Lidar point cloud ground segmentation under `lib/grndseg` using CMake.
+
+## Preprocessing
+- Run `preprocess.py` to generate ground segmentations 
+- Run `precast.py` to generate future visible freespace maps
+- Run `rasterize.py` to generate BEV object occupancy maps and object "shadow" maps. 
+
 ## Training
-Run the following command to start training our model. 
-```
-python script.py train_nuscenes --base_cfg="all.pp.mhead.vpn.config" --sample_factor=1 --epochs=20 --eval_epoch=2 --sweep_db=True --label=vp_pp_oa_ta_learn --resume=True
-```
+Refer to `train.py`.
 
 ## Testing
-Run the following command to start training our model. 
-```
-python script.py train_nuscenes --base_cfg="all.pp.mhead.vpn.config" --sample_factor=1 --epochs=20 --eval_epoch=2 --sweep_db=True --label=vp_pp_oa_ta_learn --resume=True
-```
+Refer to `test.py`.
 
-## Evaluation
+## TODOs 
+- Improve the documentation. 
 
+## Thanks
+Thanks @tarashakhurana for help with README.

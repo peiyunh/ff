@@ -192,5 +192,3 @@ if __name__ == "__main__":
             plt.plot(trajectory[:, 0], trajectory[:, 1])
         plt.grid(False)
         plt.axis("equal")
-        import ipdb
-        ipdb.set_trace()
